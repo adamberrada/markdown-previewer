@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import React, { useState,useEffect } from 'react';
+import Header from './components/Header';
+import WebFont from 'webfontloader';
+import MarkEditor from './components/MardownInput';
+import MarkPreviewer from './components/Mardownoutput';
 import './App.css';
 
+
+
 function App() {
+  const [markdown , setMarkdown] = useState(''); // set the Mardoen input 
+
+  useEffect(() => {
+    WebFont.load({
+   google : {
+        families : ['Jura']
+      }
+    })
+  } ,[])
+
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+    <Header />
+    <div className='editor-previewer'>
+    <MarkEditor markdown={markdown} setMarkdown={setMarkdown}/>
+    <MarkPreviewer markdown={markdown} />
+    </div>
     </div>
   );
 }
