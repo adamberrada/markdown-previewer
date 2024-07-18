@@ -15,7 +15,7 @@ function MarkPreviewer( {markdown }) {
  
   return (
     <div className="previewer">
-    <h2 className="h2"><VscPreview className="prevIcon" /> Previwer</h2>
+    <h2 className="h2"><VscPreview className="prevIcon" /> Previewer</h2>
       <div className="insidePreviewer"
         id="preview"
        dangerouslySetInnerHTML={{ __html: marked(markdown) }}/>

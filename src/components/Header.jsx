@@ -5,7 +5,7 @@ function Header() {
     }
     return (
         <>
-            <h1 className="h1">Mardown Previwer</h1>
+            <h1 className="h1">Markdown Previewer</h1>
             <hr style={style} />
         </>
     )
